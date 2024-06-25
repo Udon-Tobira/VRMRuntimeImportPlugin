@@ -25,8 +25,9 @@ VRMRuntimeImportPluginには以下のアセットが含まれています。
 以下の手順で操作キャラクターをインポートしたメッシュに変更できます。
 1. Initialize 関数で変更適用先のスケルタルメッシュを指定して初期化
 2. PossessSkeletalMeshComponent 関数で変更適用先のスケルタルメッシュを、インポートしたスケルタルメッシュに変更  
-   Anim Instance Class には、Retarget Pose From Mesh でリターゲティングするようなアニメーションブループリントを指定すること。  
-   その際、指定するIKRetargeterは、Target IKRig Assset を IK_VRoidSimple にすること。
+   Anim Instance Class には、サードパーソンテンプレートのアニメーションを流用する場合は、ABP_RTG_Mannequin_VRoidSimple でOK。  
+   そうじゃない場合は、Retarget Pose From Mesh でリターゲティングするようなアニメーションブループリントを作成して指定すること。  
+   Retarget Pose From Mesh で指定する IKRetargeter は、Target IKRig Assset を IK_VRoidSimple にすること。
 
 なお、実際は変更適用先のスケルタルメッシュのメッシュを変更しているのではなく、非表示にして、子コンポーネントにVRM用のスケルタルメッシュを追加しています。  
 アニメーションをリターゲティングするには、元の動いているスケルタルメッシュを残しておかないと動作しないので、このように実装しています。
